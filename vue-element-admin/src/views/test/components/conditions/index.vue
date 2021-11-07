@@ -2,7 +2,7 @@
   <div class="conditions-wrapper">
     <div class="conditions-wrapper-items">
       <span>昵称 </span>
-      <el-input placeholder="昵称" v-model="input1" size='small'></el-input>
+      <el-input placeholder="昵称"  size='small'></el-input>
     </div>
     <div class="conditions-wrapper-items">
       <span>所属学科</span>

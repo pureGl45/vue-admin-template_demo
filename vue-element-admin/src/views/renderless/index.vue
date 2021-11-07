@@ -49,7 +49,7 @@
       </svalidate>
     </div>
     <div class="row">
-      <svalidate #default="{ validate }" :value="value6" :rules="textRules">
+      <svalidate #default="{ validate }" :value="radio" :rules="textRules">
         <span>特殊资源</span>
         <el-radio v-model="radio" label="1">线上品牌赞助</el-radio>
         <el-radio v-model="radio" label="2">线下场地免费</el-radio>
@@ -80,7 +80,7 @@ export default {
       value2: "",
       value3: "",
       value4: "",
-      checkValue: "",
+      radio: null,
       value7: "",
       options: [
         {
@@ -135,7 +135,6 @@ export default {
           "线下主题活动",
           "单纯品牌曝光"
         ],
-      radio: null
     };
   }
 };

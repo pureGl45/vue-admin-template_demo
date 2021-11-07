@@ -83,30 +83,30 @@ export const constantRoutes = [
       }
     ]
   },
-  {
-    path: '/test',
-    component: Layout,
-    children: [
-      {
-        path: 'index',
-        name: 'test',
-        component: () => import('@/views/test/index'),
-        meta: { title: 'Test', icon: 'form' }
-      }
-    ]
-  },
-  {
-    path: '/renderless',
-    component: Layout,
-    children: [
-      {
-        path: 'index',
-        component: () => import('@/views/renderless/index'),
-        name: 'renderless',
-        meta: { title: 'renderless', icon: 'icon', noCache: true }
-      }
-    ]
-  },
+  // {
+  //   path: '/test',
+  //   component: Layout,
+  //   children: [
+  //     {
+  //       path: 'index',
+  //       name: 'test',
+  //       component: () => import('@/views/test/index'),
+  //       meta: { title: 'Test', icon: 'form' }
+  //     }
+  //   ]
+  // },
+  // {
+  //   path: '/renderless',
+  //   component: Layout,
+  //   children: [
+  //     {
+  //       path: 'index',
+  //       component: () => import('@/views/renderless/index'),
+  //       name: 'renderless',
+  //       meta: { title: 'renderless', icon: 'icon', noCache: true }
+  //     }
+  //   ]
+  // },
   {
     path: '/hoc',
     component: Layout,
@@ -166,6 +166,38 @@ export const constantRoutes = [
  */
 export const asyncRoutes = [
   {
+    path: '/renderless',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/renderless/index'),
+        name: 'renderless',
+        meta: {
+          title: 'renderless',
+          icon:'icon',
+          roles: ['admin'] // or you can only set roles in sub nav
+        }
+      },
+    ]
+  },
+  {
+    path: '/test',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/test/index'),
+        name: 'test',
+        meta: {
+          title: 'Test',
+          icon:'icon',
+          roles: ['editor'] // or you can only set roles in sub nav
+        }
+      },
+    ]
+  },
+  {
     path: '/permission',
     component: Layout,
     redirect: '/permission/page',
@@ -191,7 +223,8 @@ export const asyncRoutes = [
         component: () => import('@/views/permission/directive'),
         name: 'DirectivePermission',
         meta: {
-          title: 'Directive Permission'
+          title: 'Directive Permission',
+          roles: ['editor']
           // if do not set roles, means: this page does not require permission
         }
       },
@@ -206,7 +239,6 @@ export const asyncRoutes = [
       }
     ]
   },
-
   {
     path: '/icon',
     component: Layout,
