@@ -1,6 +1,9 @@
 <template>
   <div class="app-container">
     <switch-roles @change="handleRolesChange" />
+    <div>
+      <div v-permission='[admin]'> 我是admin权限下展示的内容</div>
+    </div>
     <div :key="key" style="margin-top:30px;">
       <div>
         <span v-permission="['admin']" class="permission-alert">

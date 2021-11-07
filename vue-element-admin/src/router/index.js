@@ -84,6 +84,42 @@ export const constantRoutes = [
     ]
   },
   {
+    path: '/test',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        name: 'test',
+        component: () => import('@/views/test/index'),
+        meta: { title: 'Test', icon: 'form' }
+      }
+    ]
+  },
+  {
+    path: '/renderless',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/renderless/index'),
+        name: 'renderless',
+        meta: { title: 'renderless', icon: 'icon', noCache: true }
+      }
+    ]
+  },
+  {
+    path: '/hoc',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/hoc/index'),
+        name: 'hoc',
+        meta: { title: 'hoc', icon: 'icon', noCache: true }
+      }
+    ]
+  },
+  {
     path: '/documentation',
     component: Layout,
     children: [
