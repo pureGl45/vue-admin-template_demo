@@ -6,6 +6,8 @@
 
     <div class="right-menu">
       <template v-if="device!=='mobile'">
+        <el-button v-permission="['admin']" class="right-menu-item msg"><i class="el-icon-message-solid" /></el-button>
+         <el-button v-permission="['editor']" class="right-menu-item msg"><i class="el-icon-close-notification" /></el-button>
         <search id="header-search" class="right-menu-item" />
 
         <error-log class="errLog-container right-menu-item hover-effect" />
@@ -54,7 +56,11 @@ import Screenfull from '@/components/Screenfull'
 import SizeSelect from '@/components/SizeSelect'
 import Search from '@/components/HeaderSearch'
 
+
+import permission from '@/directive/permission/index.js' // 权限判断指令
+
 export default {
+  directives: { permission },
   components: {
     Breadcrumb,
     Hamburger,
@@ -162,6 +168,11 @@ export default {
         }
       }
     }
+
+    .msg {
+      border: 0;
+    }
+
   }
 }
 </style>
