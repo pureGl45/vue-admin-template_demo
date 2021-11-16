@@ -69,11 +69,12 @@
 
 <script>
 import svalidate from "./svalidate.vue";
-
+import mixins from '@/components/Mixin/mixins.js'
 export default {
   components: {
     svalidate,
   },
+  mixins:[mixins],
   data() {
     return {
       value1: "",
@@ -136,6 +137,9 @@ export default {
           "单纯品牌曝光"
         ],
     };
+  },
+  created(){
+    this.mixinsFun()
   }
 };
 </script>
